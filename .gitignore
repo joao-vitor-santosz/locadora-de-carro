@@ -1,0 +1,19 @@
+# Arquivos gerados na compilacao do .NET
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+
+# VS Code (mantem configuracoes compartilhaveis)
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
