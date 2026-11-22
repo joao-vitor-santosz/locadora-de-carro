@@ -114,4 +114,26 @@ LocadoraCarros/
 
 ## Telas
 
-[Adicionar os prints depois]
+### Menu Principal
+![Menu principal](docs/prints/01-menu.png)
+
+### Lista completa
+![Lista completa](docs/prints/02-lista-completa.png)
+
+### Ordenação por valor da diária
+![Ordenação por valor da diária](docs/prints/03-ordenar-diaria.png)
+
+### Ordenação por ano
+![Ordenação por ano](docs/prints/04-ordenar-ano.png)
+
+### Disponíveis
+![Disponíveis](docs/prints/05-disponiveis.png)
+
+### Categoria SUV
+![Categoria SUV](docs/prints/06-categoria-suv.png)
+
+### Categoria inexistente
+![Categoria inexistente](docs/prints/07-categoria-inexistente.png)
+
+### Opção inválida
+![Opção inválida](docs/prints/08-opcao-invalida.png)
