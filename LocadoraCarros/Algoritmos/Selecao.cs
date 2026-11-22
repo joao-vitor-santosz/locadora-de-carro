@@ -1,34 +1,40 @@
+
+using System;
+using System.Collections.Generic;
 using LocadoraCarros.Models;
-namespace LocadoraCarros.Algoritmos;
 
-// Responsável: Marcus
-// REGRAS:
-// 1. NÃO altere nome, parâmetros ou tipo de retorno dos métodos.
-// 2. NÃO modifique a lista recebida; trabalhe numa cópia.
-// 3. NÃO use Sort(), OrderBy(), Where(), Find() nem BinarySearch().
-//    Métodos de string (ToUpper, Contains, CompareTo) podem.
-// 4. Teste pelo menu (dotnet run) antes de subir.
-// categorias válidas: Sedan, Hatch, SUV, Picape.
-
-public static class Selecao
+namespace LocadoraCarros.Algoritmos
 {
-
-    /// <summary>
-    /// Seleciona apenas os carros disponíveis (Disponivel == true).
-    /// Retorna uma lista nova, ou lista vazia se não houver nenhum (nunca null).
-    /// </summary>
-    public static List<Carro> SelecionarDisponiveis(List<Carro> carros)
+    public static class Selecao
     {
-        throw new NotImplementedException();
-    }
+        public static List<Carro> SelecionarDisponiveis(List<Carro> carros)
+        {
+            var resultado = new List<Carro>();
 
-    /// <summary>
-    /// Seleciona os carros de uma categoria, ignorando maiúsculas/minúsculas
-    /// ("suv" encontra "SUV"). Retorna lista vazia se a categoria
-    /// não existir ou não tiver carros (nunca null).
-    /// </summary>
-    public static List<Carro> SelecionarPorCategoria(List<Carro> carros, string categoria)
-    {
-        throw new NotImplementedException();
+            foreach (var carro in carros)
+            {
+                if (carro.Disponivel)
+                {
+                    resultado.Add(carro);
+                }
+            }
+
+            return resultado;
+        }
+
+        public static List<Carro> SelecionarPorCategoria(List<Carro> carros, string categoria)
+        {
+            var resultado = new List<Carro>();
+
+            foreach (var carro in carros)
+            {
+                if (string.Equals(carro.Categoria, categoria, StringComparison.OrdinalIgnoreCase))
+                {
+                    resultado.Add(carro);
+                }
+            }
+
+            return resultado;
+        }
     }
 }
