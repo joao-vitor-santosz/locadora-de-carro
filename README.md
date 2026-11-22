@@ -29,6 +29,19 @@ O projeto aplica conceitos de estruturas de dados com a implementação manual d
 | Seleção   | Disponibilidade             | Filtro linear    | Marcus      |
 | Seleção   | Categoria                   | Filtro linear    | Marcus      |
 
+### Ordenação
+
+- `OrdenarPorValorDiaria`: utiliza o algoritmo Bubble Sort para ordenar os carros pelo valor da diária do menor para o maior.
+- `OrdenarPorAno`: utiliza o algoritmo Selection Sort para ordenar os carros do ano mais novo para o mais antigo.
+- Ambos os métodos trabalham sobre uma cópia da lista original.
+
+### Seleção
+
+- `SelecionarDisponiveis`: percorre os carros linearmente e retorna somente aqueles cujo campo `Disponivel` é `true`.
+- `SelecionarPorCategoria`: percorre os carros linearmente e retorna aqueles cuja categoria corresponde ao termo informado.
+- A seleção por categoria ignora letras maiúsculas e minúsculas.
+- Os dois métodos retornam uma nova lista e uma lista vazia quando nenhum carro corresponde ao filtro.
+
 ## Recursos adicionais
 
 - Listar todos os carros.
@@ -97,6 +110,7 @@ LocadoraCarros/
 - Os filtros por disponibilidade e categoria devem retornar uma nova lista.
 - Os métodos que não encontram resultados devem retornar uma lista vazia.
 - A busca por placa deve retornar `null` quando o carro não existir.
+- A seleção por disponibilidade e categoria utiliza percursos lineares da lista.
 
 ## Telas
 
