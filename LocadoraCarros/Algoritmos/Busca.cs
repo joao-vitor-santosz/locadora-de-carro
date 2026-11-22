@@ -19,7 +19,52 @@ public static class Busca
     /// </summary>
     public static Carro? BuscarPorPlaca(List<Carro> carros, string placa)
     {
-        throw new NotImplementedException();
+        // Cria uma cópia da lista original
+        var lista = new List<Carro>(carros);
+
+        // Etapa 1: ordena a cópia por placa (Bubble Sort)
+        for (int i = 0; i < lista.Count - 1; i++)
+        {
+            for (int j = 0; j < lista.Count - 1 - i; j++)
+            {
+                // Se a placa da esquerda vem depois da placa da direita, troca
+                if (string.Compare(lista[j].Placa, lista[j + 1].Placa, StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    (lista[j], lista[j + 1]) = (lista[j + 1], lista[j]);
+                }
+            }
+        }
+
+        // Etapa 2: busca binária na cópia ordenada
+        int inicio = 0;
+        int fim = lista.Count - 1;
+
+        while (inicio <= fim)
+        {
+            // Pega a posição do meio do trecho que ainda sobra
+            int meio = (inicio + fim) / 2;
+
+            int comparacao = string.Compare(lista[meio].Placa, placa, StringComparison.OrdinalIgnoreCase);
+
+            if (comparacao == 0)
+            {
+                // Achou a placa
+                return lista[meio];
+            }
+            else if (comparacao < 0)
+            {
+                // A placa do meio vem antes da procurada: descarta a metade da esquerda
+                inicio = meio + 1;
+            }
+            else
+            {
+                // A placa do meio vem depois da procurada: descarta a metade da direita
+                fim = meio - 1;
+            }
+        }
+
+        // O laço terminou sem achar
+        return null;
     }
 
     /// <summary>
@@ -29,6 +74,26 @@ public static class Busca
     /// </summary>
     public static List<Carro> BuscarPorModelo(List<Carro> carros, string termo)
     {
-        throw new NotImplementedException();
+        // Lista vazia para guardar o resultado
+        var resultado = new List<Carro>();
+
+        // Se nada foi digitado, não há o que buscar
+        if (string.IsNullOrWhiteSpace(termo))
+        {
+            return resultado;
+        }
+
+        // Busca linear: olha carro por carro, do primeiro ao último
+        foreach (var carro in carros)
+        {
+            // Verifica se o modelo contém o termo digitado
+            if (carro.Modelo.Contains(termo, StringComparison.OrdinalIgnoreCase))
+            {
+                resultado.Add(carro);
+            }
+        }
+
+        // Retorna os carros encontrados
+        return resultado;
     }
 }
