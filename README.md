@@ -35,6 +35,13 @@ O projeto aplica conceitos de estruturas de dados com a implementação manual d
 - `OrdenarPorAno`: utiliza o algoritmo Selection Sort para ordenar os carros do ano mais novo para o mais antigo.
 - Ambos os métodos trabalham sobre uma cópia da lista original.
 
+### Busca
+
+- `BuscarPorPlaca`: ordena uma cópia da lista pela placa (Bubble Sort) e, em seguida, aplica a busca binária para localizar o carro.
+- `BuscarPorModelo`: percorre os carros linearmente e retorna aqueles cujo modelo contém o termo informado.
+- As duas buscas ignoram letras maiúsculas e minúsculas, e a busca por modelo aceita termos parciais.
+- A busca por placa retorna `null` quando o carro não existe; a busca por modelo retorna uma lista vazia quando não há resultados.
+
 ### Seleção
 
 - `SelecionarDisponiveis`: percorre os carros linearmente e retorna somente aqueles cujo campo `Disponivel` é `true`.
@@ -125,6 +132,15 @@ LocadoraCarros/
 
 ### Ordenação por ano
 ![Ordenação por ano](docs/prints/04-ordenar-ano.png)
+
+### Busca por placa
+![Busca por placa](docs/prints/09-busca-placa.png)
+
+### Placa inexistente
+![Placa inexistente](docs/prints/10-placa-inexistente.png)
+
+### Busca por modelo
+![Busca por modelo](docs/prints/11-busca-modelo.png)
 
 ### Disponíveis
 ![Disponíveis](docs/prints/05-disponiveis.png)
